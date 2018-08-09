@@ -200,17 +200,23 @@ function runFunc( code ) {
 
     var runner = function () {
         if (interpreter) {
-            var hasMore = interpreter.run();
-            if (hasMore) {
-                // Execution is currently blocked by some async call.
-                // Try again later.
-                setTimeout(runner, 10);
-            } else {
-                // Program is complete.
-                // outputArea.value += '\n\n<< Programa completo >>';
-                // resetInterpreter();
-                // resetStepUi(false);
-            }
+            try {                
+                var hasMore = interpreter.run();
+
+                if (hasMore) {
+                    // Execution is currently blocked by some async call.
+                    // Try again later.
+                    setTimeout(runner, 10);
+                } else {
+                    // Program is complete.
+                    // outputArea.value += '\n\n<< Programa completo >>';
+                    // resetInterpreter();
+                    // resetStepUi(false);
+                }
+            } catch( err ) {
+                console.log( 'ERRO', err);
+                outputArea.value += '\n\n<<< ERRO: ' + err.message + ' >>>';
+            }             
         }
     };
     runner();
