@@ -1,6 +1,6 @@
 Blockly.defineBlocksWithJsonArray([{
     "type": "eng_lamp",
-    "message0": "Muda estado da lampada para %1 %2 %3",
+    "message0": "Muda estado da lampada %1 %2 para %3",
     "args0": [
         {
             "type": "input_dummy"
