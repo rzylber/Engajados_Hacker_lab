@@ -101,6 +101,8 @@ function UpdateCode(event) {
     */
     codeOutput.innerHTML = basicCodeText + code;
 
+    initLights();
+
     generateCodeAndLoadIntoInterpreter();
 }
 
@@ -261,8 +263,6 @@ function bindButtonEvents( num ) {
 function setLight( num, isOn ) {
     var luzOn = SVG.get('luz' + num + '_on');
     var luzOff = SVG.get('luz' + num + '_off');
-
-    console.log( num, isOn,  isOn === true )
 
     if( isOn ) {
         luzOn.show();
