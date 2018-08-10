@@ -244,13 +244,14 @@ function runFunc( code, args = [] ) {
         arguments = args.map( function( arg ) { return "\'" + arg + "\'"  });
     }
 
-    console.log( code + '(' + arguments.join(',') + ')' );
+    var fullCode = 'if( typeof ' + code + ' == "function" ) ' + code + '(' + arguments.join(',') + ')';
+    // console.log( fullCode );
     
     // Begin execution
     // highlightPause = false;
     var interpreter = new Interpreter('', initApi);
     interpreter.stateStack[0].scope = myInterpreter.stateStack[0].scope;
-    interpreter.appendCode(code + '(' + arguments.join(',') + ')'); // TODO: 'if( ' + code + ' ) ' + code + '()'
+    interpreter.appendCode( fullCode );
 
     var runner = function () {
         if (interpreter) {
