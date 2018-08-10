@@ -103,6 +103,31 @@ Code.init = function () {
     document.getElementById('texto').addEventListener('change', function( e ) {
         window.localStorage.setItem('currentTexto2', e.target.value);
     });
+
+    document.getElementById('xml').addEventListener('click', function( e ) {
+        document.getElementById('xml_content').value = window.localStorage.getItem('currentBlocksXML');
+        document.getElementById('modal_full').style.display = 'block';
+    });
+    document.getElementById('xml_fechar').addEventListener('click', function( e ) {
+        document.getElementById('modal_full').style.display = 'none';
+    });
+    document.getElementById('xml_trocar').addEventListener('click', function( e ) {
+        if( confirm('Ter certeza? Você irá perder os blocos atuais!') ) {
+            building = true;
+
+            Code.workspacePlayground.clear();
+
+            var xml = Blockly.Xml.textToDom(document.getElementById('xml_content').value);
+            Blockly.Xml.domToWorkspace(xml, Code.workspacePlayground);
+
+            setTimeout( function(){
+                building = false;
+                UpdateCode();
+            }, 1000);
+            
+            document.getElementById('modal_full').style.display = 'none';
+        }
+    });
 }
 
 function UpdateCode(event) {
