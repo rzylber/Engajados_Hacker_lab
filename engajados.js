@@ -130,8 +130,8 @@ function generateCodeAndLoadIntoInterpreter() {
 }
 
 function resetStepUi(clearOutput) {
-    // Code.workspacePlayground.highlightBlock(null);
-    // runButton.disabled = '';
+    // document.getElementById('campo').value = '';
+    // document.getElementById('texto').value = '';
 
     if (clearOutput) {
        outputArea.value = 'SAÍDA:\n=================';
