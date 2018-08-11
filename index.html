@@ -155,8 +155,19 @@
         <button id="xml" style="float:right; margin-right: 10px; height: 17px;">XML</button>
         <select id="exemplos" style="float:right; margin-right: 10px;">
           <option> -- Exemplos -- </option>
-          <option value="inicializador"> Inicializador </option>
-          <option value="basico"> Básico </option>
+          <option value="inicializador"> 0 - Inicializador </option>
+          <option value="programa_simples"> 1 - Programa </option>
+          <option value="tipos"> 2.1 - Tipos </option>
+          <option value="nibble"> 2.2 - Nibble </option>
+          <option value="nibble_tabela"> 2.3 - Nibble e Tabela </option>
+          <option value="operadores"> 3 - Operadores </option>
+          <option value="variaveis"> 4.1 - Variáveis </option>
+          <option value="variaveis-result"> 4.2 - Variáveis - Exercício </option>
+          <option value="decisao"> 5.1 - Decisão </option>
+          <option value="decisao-result1"> 5.2 - Decisão - Exercício 1 </option>
+          <option value="decisao-result2"> 5.3 - Decisão - Exercício 2 </option>
+          <option value="eventos"> 6.1 - Eventos </option>
+          <option value="eventos-result1"> 6.2 - Eventos - Exercício 1 </option>
           <option value="textos"> Textos </option>
           <option value="lampada"> Lampadas e Botões </option>
           <option value="listas"> Listas </option>
@@ -196,6 +207,7 @@
   <xml id="toolbox" style="display: none">
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
       <block type="eng_lamp"></block> <!--TODO: colocar em categoria-->
+      <block type="eng_lamp2"></block> <!--TODO: colocar em categoria-->
       <block type="controls_if"></block>
       <block type="wait_seconds"></block>
       <block type="logic_compare"></block>
